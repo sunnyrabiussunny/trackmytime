@@ -59,7 +59,7 @@ if (projectCount.c === 0) {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // ── PROJECTS ──────────────────────────────────────────────
 app.get('/api/projects', (req, res) => {
@@ -326,7 +326,7 @@ app.get('/health', (req, res) => res.json({ status: 'ok', version: '1.0.0' }));
 
 // Serve frontend for all other routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+  res.sendFile(path.join(__dirname, 'frontend/index.html'));
 });
 
 app.listen(PORT, () => console.log(`TrackMyTime running on port ${PORT}`));
