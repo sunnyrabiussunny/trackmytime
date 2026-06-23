@@ -74,11 +74,11 @@ input::placeholder { color: #64748b; }
     <select id="project-select"><option value="">Loading...</option></select>
     <div class="label">Note</div>
     <input id="note-input" type="text" placeholder="What are you working on?">
-    <button class="btn btn-start" onclick="startTimer()">▶ Start Timer</button>
+    <button class="btn btn-start" id="btn-start">▶ Start Timer</button>
   </div>
 
   <div id="stop-form" style="display:none;">
-    <button class="btn btn-stop" onclick="stopTimer()">■ Stop Timer</button>
+    <button class="btn btn-stop" id="btn-stop">■ Stop Timer</button>
   </div>
 </div>
 
@@ -86,7 +86,7 @@ input::placeholder { color: #64748b; }
 
 <div class="server-row">
   <input id="server-url" type="text" placeholder="http://192.168.10.103:8888">
-  <button onclick="saveServer()">Save</button>
+  <button id="btn-save-server">Save</button>
 </div>
 
 <script src="popup.js"></script>

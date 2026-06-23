@@ -17,6 +17,11 @@ async function api(method, path, body) {
 }
 
 async function init() {
+  // Wire up all buttons here — no inline handlers in HTML
+  document.getElementById('btn-start').addEventListener('click', startTimer);
+  document.getElementById('btn-stop').addEventListener('click', stopTimer);
+  document.getElementById('btn-save-server').addEventListener('click', saveServer);
+
   const stored = await chrome.storage.local.get(['serverUrl']);
   if (stored.serverUrl) serverUrl = stored.serverUrl;
   document.getElementById('server-url').value = serverUrl;
@@ -83,7 +88,7 @@ async function startTimer() {
     startTicking();
     document.getElementById('status').textContent = '✓ Timer started';
   } catch (e) {
-    document.getElementById('status').textContent = '⚠ Failed to start';
+    document.getElementById('status').textContent = '⚠ Failed to start — check server URL';
   }
 }
 
@@ -94,7 +99,7 @@ async function stopTimer() {
     showStopped();
     document.getElementById('status').textContent = '✓ Timer stopped';
   } catch (e) {
-    document.getElementById('status').textContent = '⚠ Failed to stop';
+    document.getElementById('status').textContent = '⚠ Failed to stop — check server URL';
   }
 }
 
