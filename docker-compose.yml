@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  trackmytime:
+    build: .
+    container_name: trackmytime
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PORT=8888
+      - DB_PATH=/app/data/trackmytime.db
