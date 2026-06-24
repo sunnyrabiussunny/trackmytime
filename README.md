@@ -1,6 +1,6 @@
 # TrackMyTime
 
-Self-hosted time tracking web app with Chrome extension. Track time by project, view a Gantt-style timeline, generate reports, and export to CSV — all running on your own hardware.
+Self-hosted time tracking web app with Chrome extension. Track time by project, view a Gantt-style timeline, generate reports, and export to CSV.
 
 **Port: 8888**
 
